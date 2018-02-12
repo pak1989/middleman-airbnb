@@ -1,0 +1,24 @@
+
+<div class="container">
+  <div class="row">
+    <% data.flyimages.each do |link| %>
+    <div class="col-xs-12 col-sm-4">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= link[:link] %>);">
+        <div class="card-category"><%= link[:location] %></div>
+        <div class="card-description">
+          <h2><%= link[:name] %></h2>
+          <p>Very cool bird, the best</p>
+          <% link[:stars].times do %>
+          <i class="fa fa-star" style="color: #ffb400"></i>
+          <% end %>
+          <% (5 - link[:stars]).times do %>
+          <i class="fa fa-star" style="color: lightgrey"></i>
+          <% end %>
+        </div>
+        <img class="card-user" src="<%= link[:avatar] %>">
+        <a class="card-link" href="#" ></a>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
